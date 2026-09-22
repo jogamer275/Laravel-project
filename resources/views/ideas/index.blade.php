@@ -4,9 +4,9 @@
 
     @csrf
         <div class="col-span-full">
-          <label for="idea" class="block text-sm/6 font-medium text-gray-900">New Idea</label>
+          <label for="description" class="block text-sm/6 font-medium text-gray-900">New Idea</label>
           <div class="mt-2">
-            <textarea id="idea" name="idea" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
+            <textarea id="description" name="description" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"></textarea>
           </div>
           <p class="mt-3 text-sm/6 text-gray-600">Have an idea you want to save for later?</p>
         </div>
@@ -22,8 +22,7 @@
         <h2 class="font-bold">Your ideas</h2>
         <ul>
         @foreach ($ideas as $idea)
-            <li class="text-small">{{ $idea->description }}
-            </li>
+                <a href="/ideas/{{ $idea->id }}" class="text-small">{{ $idea->description }}</a>
         @endforeach
         </ul>
 
